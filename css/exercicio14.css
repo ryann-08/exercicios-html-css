@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+main{
+    position: relative;
+    width: 70%;
+    height: auto;
+    background-color: rgb(144, 140, 140);
+    margin: auto;
+}
+
+.topo{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-image: url("../css/violao.jpg");
+    background-position: center;
+}
