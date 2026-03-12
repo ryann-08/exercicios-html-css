@@ -12,14 +12,200 @@ main{
     position: relative;
     width: 70%;
     height: auto;
-    background-color: rgb(144, 140, 140);
+    background-color: rgb(0, 204, 255);
     margin: auto;
 }
 
-.topo{
-    display: flex;
+.topo {
     width: 100%;
-    height: 100px;
-    background-image: url("../css/violao.jpg");
+    height: 150px;
+    background-image: url(../Imagens/EX14guitarras_header.jpg);
+    background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
+.menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    padding: 20px;
+}
+.menu ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    padding: 10px 20px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: rgb(145, 28, 10);
+}
+
+.container_vermelha{
+    display: flex;
+    gap: 20px;
+    background-color: rgb(224, 0, 0);
+    justify-content: space-evenly;
+    padding: 20px;
+    border-top: 10px solid rgb(255, 167, 167); ;
+    border-bottom: 10px solid rgb(255, 167, 167);;
+}
+.retangulo{
+width: 45%;
+min-height: 200px;
+background-color: rgba(206, 163, 163, 0.793);
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.retangulo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.h2{
+    padding: 25px;
+    font-weight: bold;   
+    font-size: 22px;
+}
+.paragrafo{
+    padding: 25px;
+    font-size: 13px;
+}
+
+.container_azul{
+    display: flex;
+    background-color: rgb(237, 255, 255);
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 20px;
+
+}
+.item_branco{
+width: 20%;
+height:250px ;
+background-color: rgb(255, 255, 255);
+text-align: center;
+border-radius: 5px;
+}
+
+.item_branco img{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+.item_branco p:first-of-type{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin: 10px 0 5px 0;
+}
+.item_branco p:last-of-type{
+    font-size: 16px;
+    color: brown;
+    font-weight: bold;
+    margin: 0;
+}
+
+.container_laranja{
+    display: flex;
+    gap: 20px;
+    background-color: rgb(213, 75, 0);
+    justify-content: space-evenly;
+    padding: 20px;
+    border-top: 10px solid rgb(255, 167, 167); ;
+    border-bottom: 10px solid rgb(255, 167, 167);;
+}
+.retangulo iframe{
+    width: 100%;
+    height: 100%;
+}
+.texto_laranja{
+   padding: 25px;
+   font-weight: bold;   
+   font-size: 20px; 
+}
+.paragrafo_laranja{
+    padding: 25px;
+    font-size: 15px ;
+}
+.container_branco{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    border-right: 10px solid rgb(255, 167, 167);
+    border-bottom: 10px solid rgb(255, 167, 167); ;
+}
+.formulario{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 20px;
+    width: 100%;
+}
+.formulario input{
+    display: block;
+    margin-bottom: -20px;
+    width: 120%;
+    height: 40px;
+    border-radius: 5px;
+    max-width: 400px;
+}
+#texto_redes_sociais{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 70px;
+    font-size: 13px;
+    color: rgb(0, 0, 155);
+    font-weight: bold;
+}
+#texto_redes_sociais img{
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    margin-right: 2px;
+}
+.icones-sociais{
+    padding-left: 80px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+button{
+    width: 85%;
+    height: 35px;
+    background-color: #ededed;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+.rodape{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    height: auto;
+}
+
+.rodape_sociais img{
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  
+}
+
