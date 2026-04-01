@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIORES QUE 8</title>
+</head>
+<body>
+    <script>
+         let maiores = 0
+
+        for (let i = 1; i <= 20; i++) {
+    let numeros = parseFloat(prompt("Digite o " + i + " numero :"))
+    
+    if (numeros >= 9){
+        maiores = maiores + 1
+    }
+}
+    document.write("<br> Os numeros maiores que oito são : " + maiores)
+ 
+    </script>
+</body>
+</html>

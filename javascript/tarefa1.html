@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUANTIDADE DE CALORIAS</title>
+</head>
+<body>
+    <script>
+        let totalCalorias = 0
+         let pratos = parseFloat(prompt("Digite o numero do prato de sua preferencia (1 vegetariano) (2 peixe) (3 frango) (4 carne)"))
+         let sobremesa = parseFloat(prompt("Digite o numero da sobremesa de sua preferencia (1 abacaxi) (2 sorvete) (3 mouse) (4 mouse de chocolate)"))
+         let bebidas = parseFloat(prompt("Digite o numero da sua bebida de sua preferencia (1 chá) (2 suco de laranja) (3 suco de limão) (4 refrigerante)"))
+
+        switch(pratos){
+
+            case 1: totalCalorias  += 180
+            break
+
+            case 2: totalCalorias  += 230
+            break
+
+            case 3: totalCalorias += 250
+            break
+
+            case 4: totalCalorias  += 350
+            break
+
+        }
+
+        switch(sobremesa){
+            case 1: totalCalorias  += 75
+            break
+
+            case 2: totalCalorias  += 110
+            break
+
+            case 3: totalCalorias += 170
+            break
+
+            case 4: totalCalorias  += 200
+            break
+        }
+
+         switch(bebidas){
+            case 1: totalCalorias  += 20
+            break
+
+            case 2: totalCalorias += 70
+            break
+
+            case 3: totalCalorias  += 100
+            break
+
+            case 4: totalCalorias  += 65
+            break
+        }
+
+        alert("total de calorias é " + totalCalorias + " cal")
+    </script>
+</body>
+</html>

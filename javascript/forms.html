@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTEL</title>
+</head>
+<body>
+    <h1>
+        HOTEL
+    </h1>
+
+    <script>
+        
+        let nomeHotel = prompt("Qual nome do hotel? ")
+        let nome = prompt("Qual seu nome? ")
+        let senha = parseInt(prompt("Digite sua senha: "))
+
+       while(senha != 2678){
+       senha = parseInt(prompt("Senha incorreta, tente novamente: "))
+}
+
+       alert("Bem vindo ao Hotel " + nomeHotel + ", " + nome + ". É um imenso prazer ter você por aqui!")
+
+       let opcao 
+       while(opcao != 0){
+        opcao = parseInt(prompt(    
+       "Escolha uma opção:\n" +
+       "1 - Reservar quarto\n" +
+       "2 - Cadastro de hóspedes (idades)\n" +
+       "3 - Cadastro e pesquisa de hóspedes\n" +
+       "4 - Evento com garçons\n" +
+       "5 - Buffet\n" +
+       "6 - Auditório\n" +
+       "7 - Restaurante\n" +
+       "8 - Combustível\n" +
+       "9 - Ar-condicionado\n" +
+       "0 - Sair"
+))
+       
+       switch(opcao){
+    case 1:
+        reservaQuarto(nome)
+        break
+
+    case 2:
+        cadastroIdades(nome)
+        break
+
+    case 3:
+        cadastroEPesquisaHospedes(nome)
+        break
+
+    case 4:
+        eventoComGarcons(nome)
+        break
+
+    case 5:
+        custoDosAlimentos(nome)
+        break
+
+    case 6:
+        melhorAuditorio(nome)
+        break
+
+    case 7:
+        restaurante(nome)
+        break
+
+    case 8:
+        combustivel(nome)
+        break
+
+    case 9:
+        arCondicionado(nome)
+        break
+     
+
+    case 0:
+        alert("Muito obrigado e até logo, " + nome)
+        break
+
+    default:
+        alert("Opção inválida")
+}
+}
+
+ /*funcao 1*/
+
+       function reservaQuarto(nome){
+
+    let valor = parseFloat(prompt("Qual o valor da diária?"))
+
+    if(valor < 0){
+        alert("Valor inválido, " + nome)
+        return
+    }
+
+    let dias = parseInt(prompt("Quantos dias de hospedagem?"))
+
+    if(dias < 0 || dias > 30){
+        alert("Valor inválido, " + nome)
+        return
+    }
+
+    let total = valor * dias
+
+    alert("O valor de " + dias + " dias de hospedagem é de R$" + total)
+
+    let hospede = prompt("Qual o nome do hóspede?")
+    let confirmar = prompt(nome + ", você confirma a hospedagem para " + hospede + " por " + dias + " dias? S/N")
+
+    if(confirmar.toUpperCase() === "S"){
+        alert(nome + ", reserva efetuada para " + hospede + ". O valor total é de R$" + total)
+        return
+    } 
+    else {
+        alert(nome + ", reserva não efetuada")
+    }
+}
+
+
+    function cadastroIdades(nome){
+        while(true){
+        let hospede= prompt("Qual é o nome dos hóspedes?  (Digite PARE para sair)")
+        if(hospede.toUpperCase() === "PARE"){
+            break
+        }
+        let idade = parseInt(prompt("Qual é a idade? "))
+
+        if(idade <6){
+            alert(hospede + "Posuui gratuidade")
+        }
+        else if(idade > 60){
+            alert(hospede + "Paga meia entrada ")
+        }
+        else{
+            alert(hospede + " Cadastrado com sucesso ")
+        }
+        }
+
+
+    }
+
+    function cadastroEPesquisaHospedes(nome) {
+    
+    let hospedes = []
+
+    let opcaoInterna = 0
+
+    while(opcaoInterna !== 3){
+        opcaoInterna = parseInt(prompt(
+            "Escolha uma opção:\n" +
+            "1 - Cadastrar hóspede\n" +
+            "2 - Pesquisar hóspede\n" +
+            "3 - Sair"
+        ))
+
+        switch(opcaoInterna){
+            case 1:
+                if(hospedes.length >= 15){
+                    alert("Máximo de cadastros atingido")
+                } else {
+                    let nomeHospede = prompt("Qual o nome do hóspede?")
+                    hospedes.push(nomeHospede)
+                    alert("Hóspede " + nomeHospede + " cadastrado(a) com sucesso!")
+                }
+                break
+
+            case 2:
+                let pesquisar = prompt("Qual o nome do hóspede?")
+                if(hospedes.includes(pesquisar)){
+                    alert("Hóspede " + pesquisar + " foi encontrado(a)!")
+                } else {
+                    alert("Hóspede " + pesquisar + " não foi encontrado(a)!")
+                }
+                break
+
+            case 3:
+                alert(nome + ", retornando ao menu principal.")
+                break
+
+            default:
+                alert("Opção inválida")
+        }
+    }
+}
+
+
+    function eventoComGarcons(nome){
+    let garcons = parseInt(prompt("Quantos garçons serão necessários? "))
+    let duracao = parseInt(prompt("O evento terá quantas horas de duração? "))
+
+   
+    let valorduracao = garcons * duracao * 10.50   
+  
+
+    alert("O valor total do evento é: R$" + valorduracao)
+
+    let confirmar = prompt("Gostaria de efetuar a reserva? S/N?")
+      if(confirmar.toUpperCase() === "S"){
+        alert(nome + ", reserva efetuada com sucesso.")
+    } else {
+        alert(nome + ", reserva não efetuada.")
+    }
+}
+
+    function custoDosAlimentos(nome){
+
+        let convidados = parseInt(prompt("Qual numero de convidados, para o evento? "))
+        if(convidados > 350){
+            alert("Quantidade de convidados é superior capacidade máxima. ")
+            return
+        }
+        let cafe = convidados * 0.2
+        let agua = convidados * 0.5
+        let salgados = convidados * 7
+
+        let custoCafe = cafe * 0.8
+        let custoAgua = agua * 0.4
+        let custoSalgados = (salgados / 100) * 34
+
+        let total = custoCafe + custoAgua + custoSalgados
+
+         alert(
+        "O evento precisará de " + cafe + "L de café, " +
+        agua + "L de água, " +
+        salgados + " salgados.\n" +
+        "O custo total do evento será de R$ " + total
+    )
+
+        let confirmar = prompt("Gostaria de efetuar a reserva? S/N")
+
+        if(confirmar.toUpperCase() === "S"){
+        alert(nome + ", reserva efetuada com sucesso.")
+    }   else {
+        alert(nome + ", reserva não efetuada.")
+    }
+
+}
+
+    function melhorAuditorio(nome){
+
+    let convidados = parseInt(prompt("Qual numero de convidados? (max 350)"))
+
+    if(convidados < 0 && convidados > 350){
+        alert("Número de convidados inválido")
+        return
+    }
+
+    if(convidados <= 220){
+
+        let cadeirasExtras = 0
+
+        if(convidados > 150){
+            cadeirasExtras = convidados - 150
+        }
+
+        if(cadeirasExtras > 0){
+            alert("Use o auditório Laranja (inclua mais " + cadeirasExtras + " cadeiras)")
+        } else {
+            alert("Use o auditório Laranja")
+        }
+
+    } else {
+        alert("Use o auditório Colorado")
+    }
+
+    let confirmar = prompt("Gostaria de efetuar a reserva? S/N")
+
+    if(confirmar.toUpperCase() === "S"){
+        alert(nome + ", reserva efetuada com sucesso.")
+    } else {
+        alert(nome + ", reserva não efetuada.")
+    }
+}
+
+    function restaurante(nome){
+       let dia = prompt("Qual o dia do evento? (Dia da semana)")
+       let hora = parseInt(prompt("Qual a hora do evento? (Apenas numeros)"))
+
+       let disponivel = false
+
+       if(dia === "segunda" || dia === "terca" || dia === "quarta" || dia === "quinta" || dia === "sexta"){
+        if(hora >= 7 && hora <= 23){
+            disponivel = true
+        }
+    }
+
+        else if(dia === "sabado" || dia === "domingo"){
+        if(hora >= 7 && hora <= 15){
+            disponivel = true
+        }
+    }
+
+        if(disponivel){
+        let empresa = prompt("Qual o nome da empresa?")
+        alert("Restaurante reservado para " + empresa + ". " + dia + " às " + hora + "hs.")
+    }
+        else {
+        alert("Restaurante indisponível")
+    }
+}
+
+
+        function combustivel(nome){
+    
+        let alcoolWayne = parseFloat(prompt("Qual o valor do álcool no posto Wayne Oil?"))
+        let gasolinaWayne = parseFloat(prompt("Qual o valor da gasolina no posto Wayne Oil?"))
+
+    
+        let alcoolStark = parseFloat(prompt("Qual o valor do álcool no posto Stark Petrol?"))
+        let gasolinaStark = parseFloat(prompt("Qual o valor da gasolina no posto Stark Petrol?"))
+
+        
+        let precoWayne
+        let combustivelWayne
+        if(alcoolWayne <= gasolinaWayne * 0.7){
+            precoWayne = alcoolWayne * 42
+            combustivelWayne = "álcool"
+        } else {
+            precoWayne = gasolinaWayne * 42
+            combustivelWayne = "gasolina"
+        }
+
+        let precoStark, combustivelStark
+        if(alcoolStark <= gasolinaStark * 0.7){
+            precoStark = alcoolStark * 42
+            combustivelStark = "álcool"
+        } else {
+            precoStark = gasolinaStark * 42
+            combustivelStark = "gasolina"
+        }
+
+        
+        if(precoWayne < precoStark){
+            alert(nome + ", é mais barato abastecer com " + combustivelWayne + " no posto Wayne Oil. Custo: R$" + precoWayne.toFixed(2))
+        } else if(precoStark < precoWayne){
+            alert(nome + ", é mais barato abastecer com " + combustivelStark + " no posto Stark Petrol. Custo: R$" + precoStark.toFixed(2))
+        } else {
+            alert(nome + ", os dois postos oferecem o mesmo valor. Você pode escolher qualquer um. Custo: R$" + precoWayne.toFixed(2))
+        }
+    }
+ 
+
+     
+
+        function arCondicionado(nome){
+        let empresa = prompt("Qual nome da empresa? ")
+        let valor = parseFloat(prompt("Qual valor por aparelho? "))
+        let quantidade = parseInt(prompt("Quantos aparelhos a empresa vai comprar? "))
+        let desconto = parseFloat(prompt("Qual a porcentagem de desconto? "))
+        let minimo = parseInt(prompt("Qual o número mínimo de aparelhos para conseguir o desconto? "))
+
+        let aparelhosValor = valor * quantidade
+
+    if(quantidade >= minimo){
+        aparelhosValor = aparelhosValor * (1 - desconto / 100)
+    }
+
+    alert("O valor total da empresa " + empresa + " será R$ " + aparelhosValor)
+}
+
+    </script>
+    </body>
+    </html>
