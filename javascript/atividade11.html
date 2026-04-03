@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Valores</title>
+</head>
+<body>
+    <script>
+    let dentro = 0
+    let fora = 0 
+
+    for (let i = 1; i <= 10; i++) {
+    let numero = parseInt(prompt("Digite o " + i + "º número:"))
+    
+    if (numero >= 24 && numero <= 42) {
+        dentro++;
+    } else {
+        fora++;
+    }
+}
+
+    document.write("Quantidade dentro do intervalo: " + dentro + "<br>")
+    document.write("Quantidade fora do intervalo: " + fora + "<br>")
+</script>
+</body>
+</html>
